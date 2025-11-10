@@ -1,0 +1,59 @@
+/* Thiết lập cơ bản (Reset/Box Sizing) */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif; /* Chọn một font chữ dễ đọc */
+}
+
+/* 1. THANH ĐIỀU HƯỚNG (NAVBAR) */
+.navbar {
+  display: flex; /* Dùng Flexbox để căn chỉnh các mục */
+  justify-content: space-between; /* Đẩy logo và menu ra hai phía */
+  align-items: center;
+  background-color: #000; /* Nền đen */
+  color: white; /* Chữ trắng */
+  height: 60px; /* Chiều cao cố định */
+  padding: 0 20px;
+  position: fixed; /* Cố định thanh navbar ở trên cùng */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Đảm bảo navbar luôn nằm trên cùng */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Thêm bóng mờ */
+}
+
+.logo {
+  font-size: 1.2em;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.menu-icon {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5em;
+  cursor: pointer;
+  padding: 5px;
+}
+
+/* 2. PHẦN NỘI DUNG CHÍNH (HERO SECTION) */
+.hero-section {
+  /* Nền gradient giống trong ảnh */
+  background: linear-gradient(135deg, #1f4f60, #3c8d9e, #297f98);
+
+  /* Thiết lập chiều cao toàn màn hình */
+  min-height: 100vh;
+
+  /* Để nội dung không bị che bởi navbar */
+  padding-top: 60px; /* Chiều cao navbar */
+
+  /* Căn giữa nội dung (nếu có) */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
