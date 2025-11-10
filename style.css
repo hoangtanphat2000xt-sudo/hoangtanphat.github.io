@@ -3,57 +3,40 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: sans-serif; /* Chọn một font chữ dễ đọc */
 }
 
-/* 1. THANH ĐIỀU HƯỚNG (NAVBAR) */
-.navbar {
-  display: flex; /* Dùng Flexbox để căn chỉnh các mục */
-  justify-content: space-between; /* Đẩy logo và menu ra hai phía */
-  align-items: center;
-  background-color: #000; /* Nền đen */
-  color: white; /* Chữ trắng */
-  height: 60px; /* Chiều cao cố định */
-  padding: 0 20px;
-  position: fixed; /* Cố định thanh navbar ở trên cùng */
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000; /* Đảm bảo navbar luôn nằm trên cùng */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Thêm bóng mờ */
+body {
+  font-family: "Arial", sans-serif;
 }
 
-.logo {
-  font-size: 1.2em;
-  font-weight: bold;
-  letter-spacing: 1px;
-}
-
-.menu-icon {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 1.5em;
-  cursor: pointer;
-  padding: 5px;
-}
-
-/* 2. PHẦN NỘI DUNG CHÍNH (HERO SECTION) */
+/* Style cho Hero Section (Phần Giới Thiệu Lớn) */
 .hero-section {
-  /* Nền gradient giống trong ảnh */
-  background: linear-gradient(135deg, #1f4f60, #3c8d9e, #297f98);
-
-  /* Thiết lập chiều cao toàn màn hình */
+  /* Điều chỉnh để nội dung không bị che bởi Navbar cố định */
+  padding-top: 56px; /* Chiều cao Navbar Bootstrap mặc định */
   min-height: 100vh;
 
-  /* Để nội dung không bị che bởi navbar */
-  padding-top: 60px; /* Chiều cao navbar */
+  /* Gradient nền giống như bạn đã làm trước đó */
+  background: linear-gradient(135deg, #1f4f60, #3c8d9e, #297f98);
+  background-size: cover;
+  background-position: center;
+}
 
-  /* Căn giữa nội dung (nếu có) */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  text-align: center;
+/* Style cho Ảnh Đại Diện */
+.profile-pic {
+  width: 180px; /* Kích thước ảnh */
+  height: 180px;
+  object-fit: cover; /* Đảm bảo ảnh luôn vừa khung */
+  border: 5px solid rgba(255, 255, 255, 0.5); /* Viền mờ xung quanh ảnh */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Style cho Icons Mạng Xã Hội */
+.social-icon {
+  color: #3c8d9e;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+  color: #1f4f60;
 }
