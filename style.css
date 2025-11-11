@@ -303,10 +303,10 @@ body {
   list-style: disc;
 }
 /* ================================== */
-/* STYLE CHO TRANG HỒ CÁ (AQUARIUM)   */
+/* STYLE CHO TRANG HỒ CÁ (HOCA)   */
 /* ================================== */
 
-#aquarium-container {
+#hoca-container {
   width: 100%;
   min-height: 100vh;
   background: linear-gradient(to bottom, #7dd3fc 0%, #38bdf8 100%);
@@ -316,7 +316,7 @@ body {
   transition: background 1s ease-in-out;
 }
 
-.aquarium-title {
+.hoca-title {
   color: #fff;
   text-align: center;
   padding-top: 30px;
