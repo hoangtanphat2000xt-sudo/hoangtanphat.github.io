@@ -302,3 +302,269 @@ body {
   color: #555;
   list-style: disc;
 }
+/* ================================== */
+/* STYLE CHO TRANG HỒ CÁ (AQUARIUM)   */
+/* ================================== */
+
+#aquarium-container {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #7dd3fc 0%, #38bdf8 100%);
+  position: relative;
+  overflow: hidden;
+  padding-top: 56px;
+  transition: background 1s ease-in-out;
+}
+
+.aquarium-title {
+  color: #fff;
+  text-align: center;
+  padding-top: 30px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: 2.5em;
+  font-weight: bold;
+}
+
+/* =========================== */
+/* CÁC VẬT THỂ BIỂN (CÁ, RÙA) */
+/* =========================== */
+
+.sea-creature {
+  position: absolute;
+  left: -200px;
+  top: 200px;
+  z-index: 5;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.sea-creature img {
+  max-width: 100px;
+  height: auto;
+  transition: transform 0.5s;
+}
+
+/* Cá mập (bơi phức tạp) */
+#shark {
+  top: 100px;
+  animation-name: complex-swim-shark;
+  animation-duration: 20s;
+  animation-delay: 5s;
+}
+
+/* Rùa (bơi ngang quay đầu) */
+#turtle {
+  top: 500px;
+  animation-name: swim-turn-reverse;
+  animation-duration: 30s;
+  animation-delay: 10s;
+}
+
+/* Đàn cá vàng (bơi ngang quay đầu) */
+#goldfish-school {
+  top: 250px;
+  animation-name: swim-turn-reverse;
+  animation-duration: 25s;
+  animation-delay: 2s;
+}
+
+/* ======================== */
+/* THỢ LẶN (LÊN XUỐNG MỀM) */
+/* ======================== */
+
+#diver-1 {
+  left: 100px;
+  top: 200px;
+  animation-name: dive-bobbing-large;
+  animation-duration: 15s;
+  animation-delay: 3s;
+}
+#diver-2 {
+  left: 800px;
+  top: 400px;
+  animation-name: dive-bobbing-large;
+  animation-duration: 12s;
+  animation-delay: 7s;
+}
+#diver-3 {
+  left: 450px;
+  top: 150px;
+  animation-name: dive-bobbing-large;
+  animation-duration: 18s;
+  animation-delay: 0s;
+}
+
+/* ====================== */
+/* HIỆU ỨNG DI CHUYỂN    */
+/* ====================== */
+
+/* Cá mập */
+@keyframes complex-swim-shark {
+  0% {
+    left: -100px;
+    top: 100px;
+    transform: scaleX(1);
+  }
+  25% {
+    left: 400px;
+    top: 150px;
+  }
+  50% {
+    left: 800px;
+    top: 100px;
+    transform: scaleX(1);
+  }
+  50.01% {
+    transform: scaleX(-1);
+    left: 800px;
+  }
+  75% {
+    left: 400px;
+    top: 50px;
+  }
+  100% {
+    left: -100px;
+    top: 100px;
+    transform: scaleX(-1);
+  }
+}
+
+/* Rùa & cá vàng (quay đầu khi bơi ngược) */
+@keyframes swim-turn-reverse {
+  0% {
+    left: -100px;
+    transform: scaleX(1);
+  }
+  49% {
+    left: 100%;
+    transform: scaleX(1);
+  }
+  50% {
+    left: 100%;
+    transform: scaleX(-1);
+  }
+  100% {
+    left: -100px;
+    transform: scaleX(-1);
+  }
+}
+
+/* Thợ lặn (bơi lên xuống nhịp nhàng) */
+@keyframes dive-bobbing-large {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(100px) rotate(5deg);
+  }
+  75% {
+    transform: translateY(-100px) rotate(-5deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+/* ====================== */
+/* BONG BÓNG NƯỚC         */
+/* ====================== */
+
+#bubbles-img {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2; /* cao hơn nền, thấp hơn cá */
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Bong bóng */
+.faint-bubbles {
+  position: absolute;
+  width: 180px;
+  height: auto;
+  opacity: 0;
+  animation: rise-faint 20s linear infinite;
+  filter: brightness(1.2);
+}
+
+/* Vị trí bong bóng */
+#faint-bubbles-1 {
+  left: 15%;
+  animation-duration: 18s;
+  animation-delay: 0s;
+}
+#faint-bubbles-2 {
+  left: 60%;
+  animation-duration: 22s;
+  animation-delay: 5s;
+}
+
+/* Hiệu ứng bay lên */
+@keyframes rise-faint {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(-50vh) scale(1.1);
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(-110vh) scale(1.2);
+    opacity: 0;
+  }
+}
+
+/* ====================== */
+/* CÁT + NÚT ĐIỀU KHIỂN   */
+/* ====================== */
+
+.sand {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 80px;
+  background-color: #d6c69f;
+  z-index: 10;
+}
+
+.controls {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+.controls .btn {
+  margin-left: 10px;
+}
+.bubble {
+  position: absolute;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: bubbleUp linear forwards;
+}
+
+@keyframes bubbleUp {
+  0% {
+    transform: translateY(0);
+    opacity: 0.8;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-120vh);
+    opacity: 0;
+  }
+}
+/* Kết thúc file style.css */
