@@ -108,16 +108,12 @@
 
     <script>
       document.addEventListener("DOMContentLoaded", () => {
-        // --- Lấy các đối tượng DOM ---
         const container = document.getElementById("hoca-container");
         const music = document.getElementById("background-music");
         const musicToggle = document.getElementById("music-toggle");
         const bgToggle = document.getElementById("bg-toggle");
-
-        /* --- 1. Logic Phát / Ngừng nhạc --- */
         musicToggle.addEventListener("click", () => {
           if (music.paused) {
-            // Thử phát nhạc, .catch() sẽ bắt lỗi nếu trình duyệt chặn
             music.play().catch(() => {
               alert("Trình duyệt đã chặn tự động phát nhạc, hãy nhấn lại.");
             });
@@ -127,10 +123,8 @@
             musicToggle.innerHTML = '<i class="fas fa-play"></i> Phát Nhạc';
           }
         });
-
-        /* --- 2. Logic Chuyển hình nền --- */
         const backgrounds = [
-          "images/water1.jpg", // Đường dẫn dựa theo file html cũ
+          "images/water1.jpg",
           "images/water2.jpg",
           "images/water3.jpg",
         ];
@@ -139,41 +133,23 @@
         function applyBackground(index) {
           container.style.background = `url(${backgrounds[index]}) no-repeat center center / cover`;
         }
-
-        // Áp dụng nền đầu tiên
         applyBackground(currentBg);
-
-        // Đổi nền khi nhấn nút
         bgToggle.addEventListener("click", () => {
           currentBg = (currentBg + 1) % backgrounds.length;
           applyBackground(currentBg);
         });
-
-        /* --- 3. Logic Tạo bong bóng động --- */
         function createBubble() {
           const bubble = document.createElement("div");
           bubble.classList.add("bubble");
-
-          // Kích thước ngẫu nhiên (10–30px)
           const size = Math.random() * 20 + 10;
           bubble.style.width = `${size}px`;
           bubble.style.height = `${size}px`;
-
-          // Vị trí ngang ngẫu nhiên
           bubble.style.left = `${Math.random() * 100}%`;
-
-          // Thời gian di chuyển ngẫu nhiên (4–9s)
           const duration = Math.random() * 5 + 4;
           bubble.style.animationDuration = `${duration}s`;
-
-          // Thêm bong bóng vào hồ
           container.appendChild(bubble);
-
-          // Xóa bong bóng sau khi kết thúc animation
           setTimeout(() => bubble.remove(), duration * 1000);
         }
-
-        // Tạo bong bóng liên tục mỗi 0.5s
         setInterval(createBubble, 500);
       });
     </script>

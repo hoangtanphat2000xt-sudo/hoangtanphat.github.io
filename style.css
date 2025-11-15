@@ -1,77 +1,55 @@
-/* Thiết lập cơ bản (Reset/Box Sizing) */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
   font-family: "Arial", sans-serif;
 }
-
-/* Style cho Hero Section (Phần Giới Thiệu Lớn) */
 .hero-section {
-  /* Điều chỉnh để nội dung không bị che bởi Navbar cố định */
-  padding-top: 56px; /* Chiều cao Navbar Bootstrap mặc định */
+  padding-top: 56px;
   min-height: 100vh;
-
-  /* Gradient nền giống như bạn đã làm trước đó */
   background: linear-gradient(135deg, #1f4f60, #3c8d9e, #297f98);
   background-size: cover;
   background-position: center;
 }
-
-/* Style cho Ảnh Đại Diện */
 .profile-pic {
-  width: 180px; /* Kích thước ảnh */
+  width: 180px;
   height: 180px;
-  object-fit: cover; /* Đảm bảo ảnh luôn vừa khung */
-  border: 5px solid rgba(255, 255, 255, 0.5); /* Viền mờ xung quanh ảnh */
+  object-fit: cover;
+  border: 5px solid rgba(255, 255, 255, 0.5);
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 }
-
-/* Style cho Icons Mạng Xã Hội */
 .social-icon {
   color: #3c8d9e;
   margin: 0 10px;
   transition: color 0.3s ease;
 }
-
 .social-icon:hover {
   color: #1f4f60;
 }
-/* ================================== */
-/* STYLE CHO TRANG CV (2 COLUMNS)     */
-/* ================================== */
-
-/* Tổng thể CV Container */
 .cv-container {
   padding-top: 80px;
   margin-bottom: 50px;
-  max-width: 900px; /* Giới hạn chiều rộng CV để trông gọn gàng */
+  max-width: 900px;
 }
-
 .cv-row {
   border-radius: 5px;
   overflow: hidden;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   background-color: #fff;
 }
-
-/* CỘT TRÁI (SIDEBAR) */
 .cv-left-col {
-  background-color: #3f4a56; /* Màu nền xám đậm */
+  background-color: #3f4a56;
   color: white;
   padding: 30px !important;
 }
-
 .cv-avatar {
-  width: 80px; /* Kích thước nhỏ hơn */
+  width: 80px;
   height: 80px;
   object-fit: cover;
   border: 3px solid rgba(255, 255, 255, 0.6);
 }
-
 .cv-header h4 {
   font-size: 1.3em;
   font-weight: bold;
@@ -86,7 +64,6 @@ body {
   opacity: 1;
   margin-top: 15px;
 }
-
 .cv-heading {
   color: #a0d4eb;
   font-size: 1.1em;
@@ -96,16 +73,14 @@ body {
   margin-bottom: 15px;
   margin-top: 20px;
 }
-
 .cv-left-col a {
   color: #a0d4eb;
   text-decoration: none;
-  word-break: break-all; /* Ngắt chữ nếu link quá dài */
+  word-break: break-all;
 }
 .cv-left-col a:hover {
   color: #ffffff;
 }
-
 .contact-list li,
 .skills-list li,
 .hobbies-list li,
@@ -118,13 +93,10 @@ body {
   font-size: 0.95em;
   line-height: 1.5;
 }
-
-/* CỘT PHẢI (NỘI DUNG CHÍNH) */
 .cv-right-col {
   padding: 30px !important;
   color: #333;
 }
-
 .right-col-heading {
   font-size: 1.3em;
   color: #3f4a56;
@@ -132,59 +104,44 @@ body {
   border-bottom: 1px solid #ddd;
   padding-bottom: 5px;
   margin-bottom: 15px;
-  letter-spacing: 1px; /* Tạo cảm giác chuyên nghiệp hơn */
+  letter-spacing: 1px;
 }
-
-/* Các mục Nội dung (Giáo dục, Dự án) */
 .item-entry {
   margin-bottom: 25px;
   position: relative;
-  /* Loại bỏ viền trái cho CV hiện đại hơn */
-  /* border-left: 3px solid #ddd; */
 }
-
 .item-duration {
   font-size: 0.85em;
   color: #6c757d;
   font-weight: 600;
   margin-bottom: 3px;
-  display: block; /* Đảm bảo thời gian nằm riêng 1 dòng */
+  display: block;
 }
-
 .item-title {
   font-size: 1.1em;
   font-weight: 600;
   margin-bottom: 2px;
   color: #333;
 }
-
 .item-description-list {
   padding-left: 20px;
   font-size: 0.9em;
   color: #555;
   list-style: disc;
 }
-/* ================================== */
-/* STYLE CHO TRANG CV (2 COLUMNS)     */
-/* ================================== */
-
-/* Tổng thể CV Container */
 .cv-container {
   padding-top: 80px;
   margin-bottom: 50px;
   max-width: 900px;
 }
-
 .cv-row {
   border-radius: 5px;
   overflow: hidden;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   background-color: #fff;
 }
-
-/* CỘT TRÁI (SIDEBAR) */
 .cv-left-col {
-  background-color: #3f4a56; /* Màu nền xám đậm */
+  background-color: #3f4a56;
   color: white;
   padding: 30px !important;
 }
@@ -220,7 +177,6 @@ body {
   margin-bottom: 15px;
   margin-top: 20px;
 }
-
 .cv-left-col a {
   color: #a0d4eb;
   text-decoration: none;
@@ -229,7 +185,6 @@ body {
 .cv-left-col a:hover {
   color: #ffffff;
 }
-
 .contact-list li,
 .skills-list li,
 .hobbies-list li,
@@ -242,13 +197,10 @@ body {
   font-size: 0.95em;
   line-height: 1.5;
 }
-
-/* CỘT PHẢI (NỘI DUNG CHÍNH) */
 .cv-right-col {
   padding: 30px !important;
   color: #333;
 }
-
 .right-col-heading {
   font-size: 1.3em;
   color: #3f4a56;
@@ -256,22 +208,18 @@ body {
   border-bottom: 1px solid #ddd;
   padding-bottom: 5px;
   margin-bottom: 15px;
-  letter-spacing: 0.5px; /* Giảm nhẹ spacing */
+  letter-spacing: 0.5px;
 }
-
-/* Nội dung */
 .section-content,
 .item-description {
   font-size: 0.95em;
   line-height: 1.6;
 }
-
 .item-entry {
   margin-bottom: 25px;
   position: relative;
-  padding-left: 0; /* Bỏ padding left */
+  padding-left: 0;
 }
-
 .item-duration {
   font-size: 0.85em;
   color: #6c757d;
@@ -279,69 +227,53 @@ body {
   margin-bottom: 3px;
   display: block;
 }
-
 .item-title {
   font-size: 1.1em;
   font-weight: 600;
   margin-bottom: 2px;
   color: #333;
 }
-
 .item-subtitle {
   font-style: italic;
   font-size: 0.95em;
   color: #666;
   margin-bottom: 5px;
 }
-
 .item-description-list {
   padding-left: 20px;
   font-size: 0.9em;
   color: #555;
   list-style: disc;
 }
-/* ================================== */
-/* CÁC BIẾN TOÀN CỤC (VARIABLES)     */
-/* ================================== */
 :root {
-  /* Màu sắc */
   --bg-color-top: #7dd3fc;
   --bg-color-bottom: #38bdf8;
   --sand-color: #d6c69f;
   --bubble-color: rgba(255, 255, 255, 0.7);
   --title-color: #fff;
-
-  /* Z-index (Thứ tự lớp) */
-  --z-bg-bubbles: 1; /* Bong bóng mờ (nền) */
-  --z-creatures: 5; /* Cá, rùa, thợ lặn */
-  --z-sand: 10; /* Cát (trên cùng) */
-  --z-controls: 1000; /* Nút điều khiển (trên hết) */
+  --z-bg-bubbles: 1;
+  --z-creatures: 5;
+  --z-sand: 10;
+  --z-controls: 1000;
 }
-
-/* ================================== */
-/* STYLE CHUNG & HỒ CÁ */
-/* ================================== */
 body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
 }
-
 #hoca-container {
   width: 100%;
   min-height: 100vh;
-  /* Nền mặc định, sẽ bị JS ghi đè */
   background: linear-gradient(
     to bottom,
     var(--bg-color-top),
     var(--bg-color-bottom)
   );
   position: relative;
-  overflow: hidden; /* Quan trọng: Giữ mọi thứ trong hồ */
-  padding-top: 56px; /* Bằng chiều cao navbar */
+  overflow: hidden;
+  padding-top: 56px;
   transition: background 1s ease-in-out;
 }
-
 .hoca-title {
   color: var(--title-color);
   text-align: center;
@@ -350,14 +282,9 @@ body {
   font-size: 2.5em;
   font-weight: bold;
 }
-
-/* =========================== */
-/* CÁC VẬT THỂ BIỂN (CÁ, RÙA) */
-/* =========================== */
-
 .sea-creature {
   position: absolute;
-  left: -200px; /* Bắt đầu bên ngoài màn hình */
+  left: -200px;
   z-index: var(--z-creatures);
   animation-timing-function: linear;
   animation-iteration-count: infinite;
@@ -367,35 +294,24 @@ body {
   height: auto;
   transition: transform 0.5s;
 }
-
-/* Cá mập */
 #shark {
   top: 100px;
   animation-name: complex-swim-shark;
   animation-duration: 20s;
   animation-delay: 5s;
 }
-
-/* Rùa */
 #turtle {
   top: 500px;
   animation-name: swim-turn-reverse;
   animation-duration: 30s;
   animation-delay: 10s;
 }
-
-/* Đàn cá vàng */
 #goldfish-school {
   top: 250px;
   animation-name: swim-turn-reverse;
   animation-duration: 25s;
   animation-delay: 2s;
 }
-
-/* ======= */
-/* THỢ LẶN */
-/* ======= */
-
 #diver-1 {
   left: 100px;
   top: 200px;
@@ -417,12 +333,6 @@ body {
   animation-duration: 18s;
   animation-delay: 0s;
 }
-
-/* ====================== */
-/* BONG BÓNG (TĨNH & ĐỘNG) */
-/* ====================== */
-
-/* Bong bóng tĩnh (ảnh mờ) */
 #bubbles-img {
   position: absolute;
   bottom: 0;
@@ -430,10 +340,9 @@ body {
   width: 100%;
   height: 100%;
   z-index: var(--z-bg-bubbles);
-  pointer-events: none; /* Cho phép click xuyên qua */
+  pointer-events: none;
   overflow: hidden;
 }
-
 .faint-bubbles {
   position: absolute;
   width: 180px;
@@ -442,7 +351,6 @@ body {
   animation: rise-faint 20s linear infinite;
   filter: brightness(1.2);
 }
-
 #faint-bubbles-1 {
   left: 15%;
   animation-duration: 18s;
@@ -453,8 +361,6 @@ body {
   animation-duration: 22s;
   animation-delay: 5s;
 }
-
-/* Bong bóng động (tạo bằng JS) */
 .bubble {
   position: absolute;
   bottom: 0;
@@ -473,7 +379,6 @@ body {
 .controls .btn {
   margin-left: 10px;
 }
-/* Cá mập */
 @keyframes complex-swim-shark {
   0% {
     left: -100px;
@@ -503,8 +408,6 @@ body {
     transform: scaleX(-1);
   }
 }
-
-/* Rùa & cá vàng (quay đầu) */
 @keyframes swim-turn-reverse {
   0% {
     left: -100px;
@@ -523,8 +426,6 @@ body {
     transform: scaleX(-1);
   }
 }
-
-/* Thợ lặn (lên xuống) */
 @keyframes dive-bobbing-large {
   0% {
     transform: translateY(0px) rotate(0deg);
@@ -539,8 +440,6 @@ body {
     transform: translateY(0px) rotate(0deg);
   }
 }
-
-/* Bong bóng tĩnh (bay lên) */
 @keyframes rise-faint {
   0% {
     transform: translateY(0) scale(1);
@@ -561,8 +460,6 @@ body {
     opacity: 0;
   }
 }
-
-/* Bong bóng động (bay lên) */
 @keyframes bubbleUp {
   0% {
     transform: translateY(0);
@@ -576,21 +473,14 @@ body {
     opacity: 0;
   }
 }
-
-/* ====================== */
-/* RESPONSIVE (ĐƠN GIẢN)  */
-/* ====================== */
 @media (max-width: 768px) {
   .hoca-title {
     font-size: 1.8em;
     padding-top: 15px;
   }
-
-  /* Thu nhỏ các sinh vật trên di động */
   .sea-creature img {
     max-width: 70px;
   }
-
   .controls {
     bottom: 10px;
     right: 10px;
