@@ -164,8 +164,6 @@ body {
   color: #555;
   list-style: disc;
 }
-/* --- Chỉ thêm đoạn này vào cuối file style.css hiện tại của bạn --- */
-
 /* ================================== */
 /* STYLE CHO TRANG CV (2 COLUMNS)     */
 /* ================================== */
@@ -303,21 +301,49 @@ body {
   list-style: disc;
 }
 /* ================================== */
-/* STYLE CHO TRANG HỒ CÁ (HOCA)   */
+/* CÁC BIẾN TOÀN CỤC (VARIABLES)     */
 /* ================================== */
+:root {
+  /* Màu sắc */
+  --bg-color-top: #7dd3fc;
+  --bg-color-bottom: #38bdf8;
+  --sand-color: #d6c69f;
+  --bubble-color: rgba(255, 255, 255, 0.7);
+  --title-color: #fff;
+
+  /* Z-index (Thứ tự lớp) */
+  --z-bg-bubbles: 1; /* Bong bóng mờ (nền) */
+  --z-creatures: 5; /* Cá, rùa, thợ lặn */
+  --z-sand: 10; /* Cát (trên cùng) */
+  --z-controls: 1000; /* Nút điều khiển (trên hết) */
+}
+
+/* ================================== */
+/* STYLE CHUNG & HỒ CÁ CONTAINER      */
+/* ================================== */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
 
 #hoca-container {
   width: 100%;
   min-height: 100vh;
-  background: linear-gradient(to bottom, #7dd3fc 0%, #38bdf8 100%);
+  /* Nền mặc định, sẽ bị JS ghi đè */
+  background: linear-gradient(
+    to bottom,
+    var(--bg-color-top),
+    var(--bg-color-bottom)
+  );
   position: relative;
-  overflow: hidden;
-  padding-top: 56px;
+  overflow: hidden; /* Quan trọng: Giữ mọi thứ trong hồ */
+  padding-top: 56px; /* Bằng chiều cao navbar */
   transition: background 1s ease-in-out;
 }
 
 .hoca-title {
-  color: #fff;
+  color: var(--title-color);
   text-align: center;
   padding-top: 30px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -331,9 +357,8 @@ body {
 
 .sea-creature {
   position: absolute;
-  left: -200px;
-  top: 200px;
-  z-index: 5;
+  left: -200px; /* Bắt đầu bên ngoài màn hình */
+  z-index: var(--z-creatures);
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
@@ -343,7 +368,7 @@ body {
   transition: transform 0.5s;
 }
 
-/* Cá mập (bơi phức tạp) */
+/* Cá mập */
 #shark {
   top: 100px;
   animation-name: complex-swim-shark;
@@ -351,7 +376,7 @@ body {
   animation-delay: 5s;
 }
 
-/* Rùa (bơi ngang quay đầu) */
+/* Rùa */
 #turtle {
   top: 500px;
   animation-name: swim-turn-reverse;
@@ -359,7 +384,7 @@ body {
   animation-delay: 10s;
 }
 
-/* Đàn cá vàng (bơi ngang quay đầu) */
+/* Đàn cá vàng */
 #goldfish-school {
   top: 250px;
   animation-name: swim-turn-reverse;
@@ -368,7 +393,7 @@ body {
 }
 
 /* ======================== */
-/* THỢ LẶN (LÊN XUỐNG MỀM) */
+/* THỢ LẶN                */
 /* ======================== */
 
 #diver-1 {
@@ -394,7 +419,67 @@ body {
 }
 
 /* ====================== */
-/* HIỆU ỨNG DI CHUYỂN    */
+/* BONG BÓNG (TĨNH & ĐỘNG) */
+/* ====================== */
+
+/* Bong bóng tĩnh (ảnh mờ) */
+#bubbles-img {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: var(--z-bg-bubbles);
+  pointer-events: none; /* Cho phép click xuyên qua */
+  overflow: hidden;
+}
+
+.faint-bubbles {
+  position: absolute;
+  width: 180px;
+  height: auto;
+  opacity: 0;
+  animation: rise-faint 20s linear infinite;
+  filter: brightness(1.2);
+}
+
+#faint-bubbles-1 {
+  left: 15%;
+  animation-duration: 18s;
+  animation-delay: 0s;
+}
+#faint-bubbles-2 {
+  left: 60%;
+  animation-duration: 22s;
+  animation-delay: 5s;
+}
+
+/* Bong bóng động (tạo bằng JS) */
+.bubble {
+  position: absolute;
+  bottom: 0;
+  background: var(--bubble-color);
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: bubbleUp linear forwards;
+  z-index: var(--z-bg-bubbles); /* Nằm cùng lớp với bong bóng tĩnh */
+}
+
+/* ====================== */
+/* CÁT + NÚT ĐIỀU KHIỂN  */
+/* ====================== */
+.controls {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: var(--z-controls);
+}
+.controls .btn {
+  margin-left: 10px;
+}
+
+/* ====================== */
+/* KEYFRAMES (GIỮ NGUYÊN) */
 /* ====================== */
 
 /* Cá mập */
@@ -428,7 +513,7 @@ body {
   }
 }
 
-/* Rùa & cá vàng (quay đầu khi bơi ngược) */
+/* Rùa & cá vàng (quay đầu) */
 @keyframes swim-turn-reverse {
   0% {
     left: -100px;
@@ -448,7 +533,7 @@ body {
   }
 }
 
-/* Thợ lặn (bơi lên xuống nhịp nhàng) */
+/* Thợ lặn (lên xuống) */
 @keyframes dive-bobbing-large {
   0% {
     transform: translateY(0px) rotate(0deg);
@@ -464,44 +549,7 @@ body {
   }
 }
 
-/* ====================== */
-/* BONG BÓNG NƯỚC         */
-/* ====================== */
-
-#bubbles-img {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 2; /* cao hơn nền, thấp hơn cá */
-  pointer-events: none;
-  overflow: hidden;
-}
-
-/* Bong bóng */
-.faint-bubbles {
-  position: absolute;
-  width: 180px;
-  height: auto;
-  opacity: 0;
-  animation: rise-faint 20s linear infinite;
-  filter: brightness(1.2);
-}
-
-/* Vị trí bong bóng */
-#faint-bubbles-1 {
-  left: 15%;
-  animation-duration: 18s;
-  animation-delay: 0s;
-}
-#faint-bubbles-2 {
-  left: 60%;
-  animation-duration: 22s;
-  animation-delay: 5s;
-}
-
-/* Hiệu ứng bay lên */
+/* Bong bóng tĩnh (bay lên) */
 @keyframes rise-faint {
   0% {
     transform: translateY(0) scale(1);
@@ -523,37 +571,7 @@ body {
   }
 }
 
-/* ====================== */
-/* CÁT + NÚT ĐIỀU KHIỂN   */
-/* ====================== */
-
-.sand {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 80px;
-  background-color: #d6c69f;
-  z-index: 10;
-}
-
-.controls {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 1000;
-}
-.controls .btn {
-  margin-left: 10px;
-}
-.bubble {
-  position: absolute;
-  bottom: 0;
-  background: rgba(255, 255, 255, 0.7);
-  border-radius: 50%;
-  opacity: 0.8;
-  animation: bubbleUp linear forwards;
-}
-
+/* Bong bóng động (bay lên) */
 @keyframes bubbleUp {
   0% {
     transform: translateY(0);
@@ -567,4 +585,23 @@ body {
     opacity: 0;
   }
 }
-/* Kết thúc file style.css */
+
+/* ====================== */
+/* RESPONSIVE (ĐƠN GIẢN)  */
+/* ====================== */
+@media (max-width: 768px) {
+  .hoca-title {
+    font-size: 1.8em;
+    padding-top: 15px;
+  }
+
+  /* Thu nhỏ các sinh vật trên di động */
+  .sea-creature img {
+    max-width: 70px;
+  }
+
+  .controls {
+    bottom: 10px;
+    right: 10px;
+  }
+}
