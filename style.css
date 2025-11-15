@@ -319,7 +319,7 @@ body {
 }
 
 /* ================================== */
-/* STYLE CHUNG & HỒ CÁ CONTAINER      */
+/* STYLE CHUNG & HỒ CÁ */
 /* ================================== */
 body {
   margin: 0;
@@ -392,9 +392,9 @@ body {
   animation-delay: 2s;
 }
 
-/* ======================== */
-/* THỢ LẶN                */
-/* ======================== */
+/* ======= */
+/* THỢ LẶN */
+/* ======= */
 
 #diver-1 {
   left: 100px;
@@ -464,10 +464,6 @@ body {
   animation: bubbleUp linear forwards;
   z-index: var(--z-bg-bubbles); /* Nằm cùng lớp với bong bóng tĩnh */
 }
-
-/* ====================== */
-/* CÁT + NÚT ĐIỀU KHIỂN  */
-/* ====================== */
 .controls {
   position: fixed;
   bottom: 20px;
@@ -477,11 +473,6 @@ body {
 .controls .btn {
   margin-left: 10px;
 }
-
-/* ====================== */
-/* KEYFRAMES (GIỮ NGUYÊN) */
-/* ====================== */
-
 /* Cá mập */
 @keyframes complex-swim-shark {
   0% {
