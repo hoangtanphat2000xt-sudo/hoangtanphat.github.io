@@ -368,7 +368,7 @@ body {
   border-radius: 50%;
   opacity: 0.8;
   animation: bubbleUp linear forwards;
-  z-index: var(--z-bg-bubbles); /* Nằm cùng lớp với bong bóng tĩnh */
+  z-index: var(--z-bg-bubbles);
 }
 .controls {
   position: fixed;
